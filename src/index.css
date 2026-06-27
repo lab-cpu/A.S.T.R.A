@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-astra-blue: #00D1FF;
+  --color-astra-orange: #ff7b00;
+  --color-astra-green: #00FF85;
+  --color-astra-red: #ff3b30;
+  --color-astra-gold: #ffcc00;
+  --color-astra-purple: #9000ff;
+}
+
+/* Custom scrollbar styling for Sophisticated Dark design */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D1FF;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 15px rgba(0, 209, 255, 0.35));
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: drop-shadow(0 0 35px rgba(0, 209, 255, 0.6));
+  }
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scanlines {
+  position: relative;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+  z-index: 50;
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.scanline-effect {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 209, 255, 0.05);
+  box-shadow: 0 0 8px rgba(0, 209, 255, 0.2);
+  animation: scanline 12s linear infinite;
+  pointer-events: none;
+  z-index: 49;
+}

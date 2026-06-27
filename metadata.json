@@ -1,0 +1,6 @@
+{
+  "name": "ASTRA - IA Jarvis Avançada",
+  "description": "Um assistente inteligente inspirado no JARVIS do Homem de Ferro, com núcleo holográfico interativo, comandos de automação simulados, síntese de voz em tempo real e inteligência com Google Search.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
